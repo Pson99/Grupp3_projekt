@@ -25,25 +25,42 @@ public class User {
    }
    
    // ArrayList to save valid users
-   private ArrayList <User> users = new ArrayList <>();
+   private static ArrayList <User> users = new ArrayList <>();
    
    
 // Methods
    public boolean ValidateUserID(){
-       
+        char[] userIdChar = this.userID.toCharArray();
+        for (char c : userIdChar) {
+            //Todo check chars to requirement
+            System.out.println(c);         
+        }  
        return true; 
 }
    
    public boolean ValidatePassword(){
+        char[] userIdChar = this.password.toCharArray();
+        for (char c : userIdChar) {
+            //Todo check chars to requirement
+            System.out.println(c);         
+        }  
        return true;
    }
    
    public boolean CheckUserInDB(){
+       for (User user : users) {
+           if(user.userID.equals(this.userID))return true;
+       }
        return false;
    }
    
-   private boolean CheckPassword(){
-       return true;
+   public boolean CheckPassword(){
+       for (User user : users) {
+           if(user.userID.equals(this.userID)){
+               if(user.password.equals(this.password))return true;
+           }        
+       }
+       return false;
    }
    
    // Add valid users to ArrayList

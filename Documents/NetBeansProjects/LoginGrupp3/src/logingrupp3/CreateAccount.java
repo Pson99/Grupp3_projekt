@@ -69,13 +69,13 @@ public class CreateAccount {
                 //Create user object
                 User user = new User(userID, password);
                 //Check if user in DB and if so check password               
-                //Could be the same method, we don't need two methods for
-                //check user in DB and check password
+                if(user.CheckUserInDB()){
+                    if(user.CheckPassword())valid = true;
+                }
                 //Lets say we give them three attempts
                 if(count == 3)break;
             } while (!valid);
             if(valid)System.out.println("Succes, you're logged in!");
-
         }
         //Loop back to main menu        
         } while (true);
