@@ -13,41 +13,43 @@ import java.util.ArrayList;
  */
 public class User {
     
-   // Attribut 
+   // Attributes 
    private String userID;
    private String password;
  
    
-   // Konstruktor
+   // Constructor
    public User (String userID, String password){
    this.userID = userID;
    this.password = password;
    }
    
-   // ArrayLista som lagrar användare
-   private ArrayList <User> users = new ArrayList <User>();
+   // ArrayList to save valid users
+   private ArrayList <User> users = new ArrayList <>();
    
    
-// Metoder
-   private boolean ValidateUserID(){
+// Methods
+   public boolean ValidateUserID(){
+       
        return true; 
 }
    
-   private boolean ValidatePassword(){
+   public boolean ValidatePassword(){
        return true;
    }
    
-   private boolean CheckUserInDB(){
-       return true;
+   public boolean CheckUserInDB(){
+       return false;
    }
    
    private boolean CheckPassword(){
        return true;
    }
    
-   // Lägger till korrekt användare till listan över användare
-   private void AddUserToUsers(String userId, String password){
-     users.add(new User(userID, password));
+   // Add valid users to ArrayList
+   public void AddUserToUsers(){
+     users.add(new User(this.userID, this.password));
    }
+   
    
 }
