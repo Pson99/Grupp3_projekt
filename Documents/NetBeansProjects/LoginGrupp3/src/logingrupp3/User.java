@@ -24,7 +24,7 @@ public class User {
    this.password = password;
    }
    
-   // ArrayList to save valid users
+   // ArrayList to save valid users and index counter
    private static ArrayList <User> users = new ArrayList <>();
    
    
@@ -47,7 +47,7 @@ public class User {
        return true;
    }
    
-   public boolean CheckUserInDB(){
+   public boolean CheckUserInDB(){       
        for (User user : users) {
            if(user.userID.equals(this.userID))return true;
        }
