@@ -53,8 +53,8 @@ public class Login {
             } while (!valid);
 
         }
-        
-        //Goto login, already has account
+        //If successful with create account we will goto main menu
+        //If selecting "L" in main menu we will start here
         else if(choice.equalsIgnoreCase("L")){
             int count = 0;
             boolean valid = false;

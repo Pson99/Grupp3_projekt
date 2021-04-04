@@ -24,7 +24,7 @@ public class User {
    this.password = password;
    }
    
-   // ArrayList to save valid users and index counter
+   // ArrayList to save valid users
    private static ArrayList <User> users = new ArrayList <>();
    
    
@@ -59,6 +59,7 @@ public class User {
    
    public boolean CheckUserInDB(){       
        for (User user : users) {
+           //userID not case sensitive
            if(user.userID.equalsIgnoreCase(this.userID))return true;
        }
        return false;
@@ -66,6 +67,7 @@ public class User {
    
    public boolean CheckPassword(){
        for (User user : users) {
+           //userID not case sensitive but password is
            if(user.userID.equalsIgnoreCase(this.userID)){
                if(user.password.equals(this.password))return true;
            }        
