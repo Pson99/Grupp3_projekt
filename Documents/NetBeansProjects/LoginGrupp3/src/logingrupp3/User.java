@@ -31,23 +31,21 @@ public class User {
 // Methods
    public boolean ValidateUserID(){
        boolean letter = false, number = false;
-       String specialCharacters=" !#$%&'()*+,-./:;<=>?@[]^_`{|}";
+       String specialCharacters = " !#$%&'()*+,-./:;<=>?@[]^_`{|}";
+       String numbers = "1234567890";
+       
        
        //Check if userID empty
        if(this.userID.isEmpty() || this.userID.equals(null))return false;
        //Check size, at least 4 characters
        if(this.userID.length() < 4)return false;
-       //Check for special characters and blanc space
+       //Check for special characters or blanc space and numbers and letters
        for (int i = 0; i < this.userID.length(); i++) {   
             if(specialCharacters.contains(Character.toString(this.userID.charAt(i))))return false;
-        }
-       //Now check each character for letter and number
-       char[] userIdChar = this.userID.toCharArray();      
-       for (char c : userIdChar) {
-           //Todo check chars to requirement
-           System.out.println(c);         
-        }  
-       return true; 
+            else if(numbers.contains(Character.toString(this.userID.charAt(i))))number = true;
+            else letter = true;
+        } 
+       return(letter && number); 
 }
    
    public boolean ValidatePassword(){
