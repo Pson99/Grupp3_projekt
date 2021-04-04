@@ -39,8 +39,8 @@ public class User {
 }
    
    public boolean ValidatePassword(){
-        char[] userIdChar = this.password.toCharArray();
-        for (char c : userIdChar) {
+        char[] passwordChar = this.password.toCharArray();
+        for (char c : passwordChar) {
             //Todo check chars to requirement
             System.out.println(c);         
         }  

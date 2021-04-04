@@ -125,7 +125,7 @@ public class Login {
         else if(x == 3){
             text = "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!\n";
             text+= "!                         ERROR                              !\n";
-            text+= "! Password not in database, check your typing, you have       !\n";
+            text+= "! Password not in database, check your typing, you have      !\n";
             text+= "! three attempts.                                            !\n";
             text+= "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!\n"; 
             return text;            
