@@ -43,7 +43,8 @@ public class User {
             if(specialCharacters.contains(Character.toString(this.userID.charAt(i))))return false;
             else if(numbers.contains(Character.toString(this.userID.charAt(i))))number = true;
             else letter = true;
-        } 
+        }
+       //Returns true if only letters and numbers
        return(letter && number); 
 }
    

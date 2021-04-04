@@ -69,7 +69,7 @@ public class Login {
                 
                 //Check if user in DB and if so check password               
                 if(user.CheckUserInDB()){
-                    //Check password only if userID is valid
+                    //Check password only if userID is in DB
                     if(user.CheckPassword())valid = true;
                     //If password is wrong
                     else System.out.println(Errors(3));
@@ -89,9 +89,7 @@ public class Login {
         } while (true);       
     }
     
-    // Attributes 
-    
-    
+        
     // Methods
   public static String InputStr(){
     Scanner scan = new Scanner(System.in);
@@ -100,18 +98,18 @@ public class Login {
     
     public static String Errors(int x){
         if(x == 1){      
-            text = "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!\n";
-            text+= "!                         ERROR                              !\n";
-            text+= "! Prerequisites:                                             !\n";
-            text+= "! User ID has to be unique and consist of minimum 4 chars    !\n";
-            text+= "! only letters and numbers and at least one of each, user ID !\n";
-            text+= "! is not case sensitive, no empty spaces are allowed.        !\n";
-            text+= "!                                                            !\n";
-            text+= "! Password has to have a minimum of 4 chars and consist of   !\n";
-            text+= "! at least one letter, one number and one special character. !\n";
-            text+= "! Passwords are case sensitive.                              !\n";
-            text+= "!                                                            !\n";
-            text+= "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!\n";           
+            text = "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!\n";
+            text+= "!                           ERROR                               !\n";
+            text+= "! Prerequisites:                                                !\n";
+            text+= "! User ID has to be unique and consist of minimum 4 characters, !\n";
+            text+= "! only letters and numbers and at least one of each, user ID    !\n";
+            text+= "! is not case sensitive, no empty spaces are allowed.           !\n";
+            text+= "!                                                               !\n";
+            text+= "! Password has to have a minimum of 4 chars and consist of      !\n";
+            text+= "! at least one letter, one number and one special character.    !\n";
+            text+= "! Passwords are case sensitive.                                 !\n";
+            text+= "!                                                               !\n";
+            text+= "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!\n";           
             return text;           
         }
         else if(x == 2){
