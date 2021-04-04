@@ -30,16 +30,23 @@ public class User {
    
 // Methods
    public boolean ValidateUserID(){
+       boolean letter = false, number = false;
+       String specialCharacters=" !#$%&'()*+,-./:;<=>?@[]^_`{|}";
+       
        //Check if userID empty
        if(this.userID.isEmpty() || this.userID.equals(null))return false;
        //Check size, at least 4 characters
        if(this.userID.length() < 4)return false;
-       //Now check each character
-       char[] userIdChar = this.userID.toCharArray();
+       //Check for special characters and blanc space
+       for (int i = 0; i < this.userID.length(); i++) {   
+            if(specialCharacters.contains(Character.toString(this.userID.charAt(i))))return false;
+        }
+       //Now check each character for letter and number
+       char[] userIdChar = this.userID.toCharArray();      
        for (char c : userIdChar) {
            //Todo check chars to requirement
            System.out.println(c);         
-       }  
+        }  
        return true; 
 }
    
