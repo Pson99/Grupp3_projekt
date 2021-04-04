@@ -49,7 +49,7 @@ public class Login {
                     user.AddUserToUsers();
                     //Break out of do-while loop
                     valid = true;
-                }
+                } else System.out.println(Errors(1));
 
                 //If all is good goto main menu               
             } while (!valid);
@@ -68,10 +68,15 @@ public class Login {
                 password = InputStr();
                 //Create user object
                 User user = new User(userID, password);
+                
                 //Check if user in DB and if so check password               
                 if(user.CheckUserInDB()){
+                    //Check password only if userID is valid
                     if(user.CheckPassword())valid = true;
-                }
+                    //If password is wrong
+                    else System.out.println(Errors(3));
+                }else System.out.println(Errors(2));//If userID is wrong
+                
                 //Lets say we give them three attempts
                 if(count == 3)break;
             } while (!valid);
@@ -83,10 +88,7 @@ public class Login {
             }
         }
         //Loop back to main menu        
-        } while (true);
-
-        
-        
+        } while (true);       
     }
     
     // Attributes 
@@ -98,8 +100,39 @@ public class Login {
     return scan.next().trim();
     }
     
-    public static String Errors(){
-    return "Felmeddelande";
-    }
-    
+    public static String Errors(int x){
+        String text;
+        if(x == 1){      
+            text = "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!\n";
+            text+= "!                         ERROR                              !\n";
+            text+= "! Prerequisites:                                             !\n";
+            text+= "! User ID has to be unique and consist of minimum 4 chars    !\n";
+            text+= "! only letters and numbers and at least one of each, user ID !\n";
+            text+= "! is not case sensitive, no empty spaces are allowed.        !\n";
+            text+= "!                                                            !\n";
+            text+= "! Password has to have a minimum of 4 chars and consist of   !\n";
+            text+= "! at least one letter, one number and one special character. !\n";
+            text+= "! Passwords are case sensitive.                              !\n";
+            text+= "!                                                            !\n";
+            text+= "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!\n";           
+            return text;           
+        }
+        else if(x == 2){
+            text = "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!\n";
+            text+= "!                         ERROR                              !\n";
+            text+= "! User ID not in database, check your typing, you have       !\n";
+            text+= "! three attempts.                                            !\n";
+            text+= "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!\n"; 
+            return text;
+        }
+        else if(x == 3){
+            text = "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!\n";
+            text+= "!                         ERROR                              !\n";
+            text+= "! Password not in database, check your typing, you have       !\n";
+            text+= "! three attempts.                                            !\n";
+            text+= "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!\n"; 
+            return text;            
+        }
+        return "Error";
+    } 
 }
