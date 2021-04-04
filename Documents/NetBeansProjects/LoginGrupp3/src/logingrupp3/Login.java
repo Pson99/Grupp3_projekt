@@ -105,7 +105,7 @@ public class Login {
             text+= "! Prerequisites:                                             !\n";
             text+= "! User ID has to be unique and consist of minimum 4 chars    !\n";
             text+= "! only letters and numbers and at least one of each, user ID !\n";
-            text+= "! is case sensitive, no empty spaces are allowed.            !\n";
+            text+= "! is not case sensitive, no empty spaces are allowed.        !\n";
             text+= "!                                                            !\n";
             text+= "! Password has to have a minimum of 4 chars and consist of   !\n";
             text+= "! at least one letter, one number and one special character. !\n";

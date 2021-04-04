@@ -33,8 +33,7 @@ public class User {
        boolean letter = false, number = false;
        String specialCharacters = " !#$%&'()*+,-./:;<=>?@[]^_`{|}";
        String numbers = "1234567890";
-       
-       
+              
        //Check if userID empty
        if(this.userID.isEmpty() || this.userID.equals(null))return false;
        //Check size, at least 4 characters
@@ -52,21 +51,21 @@ public class User {
         char[] passwordChar = this.password.toCharArray();
         for (char c : passwordChar) {
             //Todo check chars to requirement
-            System.out.println(c);         
+            //System.out.println(c);         
         }  
        return true;
    }
    
    public boolean CheckUserInDB(){       
        for (User user : users) {
-           if(user.userID.equals(this.userID))return true;
+           if(user.userID.equalsIgnoreCase(this.userID))return true;
        }
        return false;
    }
    
    public boolean CheckPassword(){
        for (User user : users) {
-           if(user.userID.equals(this.userID)){
+           if(user.userID.equalsIgnoreCase(this.userID)){
                if(user.password.equals(this.password))return true;
            }        
        }
