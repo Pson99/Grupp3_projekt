@@ -30,11 +30,16 @@ public class User {
    
 // Methods
    public boolean ValidateUserID(){
-        char[] userIdChar = this.userID.toCharArray();
-        for (char c : userIdChar) {
-            //Todo check chars to requirement
-            System.out.println(c);         
-        }  
+       //Check if userID empty
+       if(this.userID.isEmpty() || this.userID.equals(null))return false;
+       //Check size, at least 4 characters
+       if(this.userID.length() < 4)return false;
+       //Now check each character
+       char[] userIdChar = this.userID.toCharArray();
+       for (char c : userIdChar) {
+           //Todo check chars to requirement
+           System.out.println(c);         
+       }  
        return true; 
 }
    
