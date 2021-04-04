@@ -11,7 +11,7 @@ import java.util.Scanner;
  *
  * @author schum
  */
-public class CreateAccount {
+public class Login {
 
 
     public static void main(String[] args) {
@@ -22,10 +22,10 @@ public class CreateAccount {
         //Main loop
         do {            
          //Main menu
-        text = "*****************\n";
-        text+= "Login\n";
-        text+= "Create account\n";
-        text+= "*****************\n";
+        text = "***********************\n";
+        text+= "*  L. Login           *\n";
+        text+= "*  C. Create account  *\n";
+        text+= "***********************\n";
         text+= "Type \"L\" or \"C\" to continue: ";
         System.out.print(text);
         String choice = InputStr();
@@ -75,7 +75,12 @@ public class CreateAccount {
                 //Lets say we give them three attempts
                 if(count == 3)break;
             } while (!valid);
-            if(valid)System.out.println("Succes, you're logged in!");
+            if(valid){
+                text = "*----------------------------*\n";
+                text+= "| Success, you're logged in! |\n";
+                text+= "*----------------------------*";
+                System.out.println("\n"+text+"\n");
+            }
         }
         //Loop back to main menu        
         } while (true);
