@@ -12,13 +12,11 @@ import java.util.Scanner;
  * @author schum
  */
 public class Login {
+    private static String userID;
+    private static String password;
+    private static String text;
 
-
-    public static void main(String[] args) {
-        String userID;
-        String password;
-        String text;
-        
+    public static void main(String[] args) {        
         //Main loop
         do {            
          //Main menu
@@ -101,7 +99,6 @@ public class Login {
     }
     
     public static String Errors(int x){
-        String text;
         if(x == 1){      
             text = "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!\n";
             text+= "!                         ERROR                              !\n";
