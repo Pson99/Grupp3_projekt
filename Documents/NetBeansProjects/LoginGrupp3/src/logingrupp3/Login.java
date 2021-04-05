@@ -128,6 +128,7 @@ public class Login {
             text+= "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!\n"; 
             return text;            
         }
+        //Generic Error not used for the time being
         return "Error";
     } 
 }
