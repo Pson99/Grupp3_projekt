@@ -58,6 +58,8 @@ public class UserIT {
         assertFalse(new User("abcdefghij", null).ValidateUserID());
         //Correct userID
         assertTrue(new User("rf20", null).ValidateUserID());
+        //Correct userID with swedish letters, not possible to try manual input here
+        assertTrue(new User("åäö20", null).ValidateUserID());
         //Correct userID checked by JUnit preprogrammed assert
         User instance = new User("RichardFehling2021", null);
         boolean expResult = true;
