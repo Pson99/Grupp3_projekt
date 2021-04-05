@@ -35,7 +35,8 @@ public class User {
        String numbers = "1234567890";
               
        //Check if userID empty
-       if(this.userID.isEmpty() || this.userID.equals(null))return false;
+       if(this.userID == null)return false;
+       if(this.userID.isEmpty())return false;
        //Check size, at least 4 characters
        if(this.userID.length() < 4)return false;
        //Check for special characters or blanc space and numbers and letters
