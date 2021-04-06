@@ -75,8 +75,11 @@ public class UserIT {
      */
     @Test
     public void testValidatePassword() {
-        /*
         System.out.println("ValidatePassword");
+        //Check password not empty
+
+        
+        /*
         User instance = null;
         boolean expResult = false;
         boolean result = instance.ValidatePassword();

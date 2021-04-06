@@ -50,6 +50,7 @@ public class User {
 }
    
    public boolean ValidatePassword(){
+       if(this.userID == null)return false;
         char[] passwordChar = this.password.toCharArray();
         for (char c : passwordChar) {
             //Todo check chars to requirement
