@@ -105,10 +105,10 @@ public class Login {
             text+= "! only letters and numbers and at least one of each, user ID    !\n";
             text+= "! is not case sensitive, no empty spaces are allowed.           !\n";
             text+= "!                                                               !\n";
-            text+= "! Password has to have a minimum of 4 chars and consist of      !\n";
-            text+= "! at least one letter, one number and one special character.    !\n";
-            text+= "! Passwords are case sensitive.                                 !\n";
-            text+= "!                                                               !\n";
+            text+= "! Password has to have a minimum of 4 characters and consist of !\n";
+            text+= "! of at least one letter, one number and one special character. !\n";
+            text+= "! Passwords are case sensitive and need to consist of both      !\n";
+            text+= "! upper and lower case.                                         !\n";
             text+= "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!\n";           
             return text;           
         }
