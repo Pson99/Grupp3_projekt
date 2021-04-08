@@ -55,9 +55,8 @@ public class User {
        String emptySpace = " ";
        String numbers = "1234567890";
        String capitalLetters = "ABCDEFGHIJKLMNOPQRSTUVWXYZÅÄÖ";
-      
-      
-       //check if userID empty
+         
+       //check if password is empty
        if(this.password == null)return false;
        if(this.password.isEmpty())return false;
        //Check size, at least 4 characters and a maximum om 16 characters
