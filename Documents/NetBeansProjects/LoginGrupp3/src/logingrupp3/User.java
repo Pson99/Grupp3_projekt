@@ -50,13 +50,29 @@ public class User {
 }
    
    public boolean ValidatePassword(){
-       if(this.userID == null)return false;
-        char[] passwordChar = this.password.toCharArray();
-        for (char c : passwordChar) {
-            //Todo check chars to requirement
-            //System.out.println(c);         
-        }  
-       return true;
+       boolean specialChar = false, number = false, letter = false, upperCase = false;
+       String specialCharacters = "!#$%&'()*+,-./:;<=>?@[]^_`{|}";
+       String emptySpace = " ";
+       String numbers = "1234567890";
+       String capitalLetters = "ABCDEFGHIJKLMNOPQRSTUVWXYZÅÄÖ";
+      
+      
+       //check if userID empty
+       if(this.password == null)return false;
+       if(this.password.isEmpty())return false;
+       //Check size, at least 4 characters and a maximum om 16 characters
+       if(this.password.length() < 4 || this.password.length() > 16) return false;
+      
+       //Check for no empty space but at least one letter, one number and one special character
+       for (int i = 0; i < this.password.length(); i++) {
+           if(emptySpace.contains(Character.toString(this.password.charAt(i))))return false;
+           else if(specialCharacters.contains(Character.toString(this.password.charAt(i)))) specialChar = true;
+           else if (numbers.contains(Character.toString(this.password.charAt(i)))) number = true;
+           else if (capitalLetters.contains(Character.toString(this.password.charAt(i)))) upperCase = true;
+           else letter = true;
+       }  
+       //returns true if all the criteria is there
+       return(specialChar && number && upperCase && letter);
    }
    
    public boolean CheckUserInDB(){       
