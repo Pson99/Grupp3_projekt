@@ -108,7 +108,7 @@ public class Login {
             text+= "! Password has to have a minimum of 4 characters and consist of !\n";
             text+= "! of at least one letter, one number and one special character. !\n";
             text+= "! Passwords are case sensitive and need to consist of both      !\n";
-            text+= "! upper and lower case letters. The max length is 16 characters !\n";
+            text+= "! upper and lower case letters. The max length is 16 characters.!\n";
             text+= "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!\n";           
             return text;           
         }
