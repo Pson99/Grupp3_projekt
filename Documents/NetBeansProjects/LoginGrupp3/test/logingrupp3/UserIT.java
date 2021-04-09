@@ -76,6 +76,7 @@ public class UserIT {
     @Test
     public void testValidatePassword() {
         System.out.println("ValidatePassword");
+        assertTrue("Felvärde", true);
         //Check password not empty
 
         
