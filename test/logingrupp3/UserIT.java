@@ -17,6 +17,8 @@ import static org.junit.Assert.*;
  * @author Bax Musik
  */
 public class UserIT {
+    User testUser1;
+    User testUser2;
     
     public UserIT() {
     }
@@ -65,8 +67,7 @@ public class UserIT {
         boolean expResult = true;
         boolean result = instance.ValidateUserID();
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
+        System.out.println("12 user ID's tested");  
         
     }
 
@@ -139,13 +140,20 @@ public class UserIT {
      */
     @Test
     public void testAddUserToUsers() {
-        /*
         System.out.println("AddUserToUsers");
-        User instance = null;
-        instance.AddUserToUsers();
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-        */
+        //Make instance of User
+        testUser1 = new User("testing123", "\"Testing123");
+        //Add to ArrayList
+        testUser1.AddUserToUsers();
+        //Make another instance in ArrayList
+        testUser2 = new User("testing321", "#Testing321");
+        testUser2.AddUserToUsers();
+        //Check these users in DB
+        assertTrue(testUser1.CheckUserInDB());
+        assertTrue(testUser2.CheckUserInDB());
+        //Check ArrayList size, expected size is 2
+        assertEquals(2, testUser1.GetUsers().size());
+        System.out.println(testUser1.GetUsers().size() + " users in ArrayList, 2 expected.");
     }
     
 }

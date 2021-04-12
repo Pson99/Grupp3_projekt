@@ -96,6 +96,9 @@ public class User {
    public void AddUserToUsers(){
      users.add(new User(this.userID, this.password));
    }
-   
+   // Get users for testing purposes
+   public ArrayList GetUsers(){
+       return users;
+   }   
    
 }
