@@ -59,7 +59,6 @@ public class Login {
             int count = 0;
             boolean valid = false;
             do {
-                count++;
                 System.out.print("Enter user ID to login: ");
                 userID = InputStr();
                 System.out.print("Enter your password: ");
@@ -72,7 +71,10 @@ public class Login {
                     //Check password only if userID is in DB
                     if(user.CheckPassword())valid = true;
                     //If password is wrong
-                    else System.out.println(Errors(3));
+                    else {
+                        count++;
+                        System.out.println(Errors(3));
+                    }
                 }else System.out.println(Errors(2));//If userID is wrong
                 
                 //Lets say we give them three attempts
