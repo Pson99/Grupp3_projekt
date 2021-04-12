@@ -44,7 +44,7 @@ public class UserIT {
      */
     @Test
     public void testValidateUserID() {
-        System.out.println("ValidateUserID");
+        System.out.println("\nValidateUserID");
         //Check empty and space in userID
         assertFalse(new User(null , null).ValidateUserID());
         assertFalse(new User("", null).ValidateUserID());
@@ -76,7 +76,7 @@ public class UserIT {
      */
     @Test
     public void testValidatePassword() {
-        System.out.println("ValidatePassword");
+        System.out.println("\nValidatePassword");
         assertTrue("Felvärde", true);
         //Check password not empty
 
@@ -97,7 +97,7 @@ public class UserIT {
     @Test
     public void testCheckUserInDB() {
         
-        System.out.println("CheckUserInDB");
+        System.out.println("\nCheckUserInDB");
         // Create a few new users
         User user1 = new User("Pierre1", null);
         User user2 = new User("Kalle1", null);
@@ -115,6 +115,7 @@ public class UserIT {
         // Test if users is in database
         assertTrue(user1.CheckUserInDB());
         assertTrue(user4.CheckUserInDB());
+        System.out.println("user1 and user4 of 5 users checked in DB");
       
        
     }
@@ -124,8 +125,8 @@ public class UserIT {
      */
     @Test
     public void testCheckPassword() {
+        System.out.println("\nCheckPassword");        
         /*
-        System.out.println("CheckPassword");
         User instance = null;
         boolean expResult = false;
         boolean result = instance.CheckPassword();
