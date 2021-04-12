@@ -115,8 +115,8 @@ public class Login {
         else if(x == 2){
             text = "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!\n";
             text+= "!                         ERROR                              !\n";
-            text+= "! User ID not in database, check your typing, you have       !\n";
-            text+= "! three attempts.                                            !\n";
+            text+= "! User ID not in database, check your typing, or create      !\n";
+            text+= "! new account                                                !\n";
             text+= "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!\n"; 
             return text;
         }
